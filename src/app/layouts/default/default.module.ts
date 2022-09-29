@@ -9,6 +9,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatCardModule} from '@angular/material/card';
+import { DashboardService } from 'src/app/modules/dashboard.service';
 
 
 
@@ -26,8 +27,9 @@ import {MatCardModule} from '@angular/material/card';
     FlexLayoutModule,
     MatDividerModule,
     MatCardModule
-
-
+  ],
+  providers: [
+    DashboardService
   ]
 })
 export class DefaultModule { }
