@@ -3,7 +3,6 @@ import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
 
 
-
 @Component({
   selector: 'app-widget-area',
   templateUrl: './area.component.html',
@@ -11,50 +10,44 @@ import HC_exporting from 'highcharts/modules/exporting';
 })
 export class AreaComponent implements OnInit {
 
-  Highcharts: typeof Highcharts = Highcharts;
-  chartOptions: Highcharts.Options = {};
+  chartOptions!: {};
+  @Input() data: any = [];
 
-  @Input() data: { name: string; data: number[]; }[] = [];
-  
+  Highcharts = Highcharts;
 
   constructor() { }
 
-  ngOnInit(): void {
-    this.chartOptions = 
-    {
+  ngOnInit() {
+    this.chartOptions = {
       chart: {
         type: 'area'
-    },
-    title: {
-        text: 'TEXT TEXT TEXT'
-    },
-    subtitle: {
+      },
+      title: {
+        text: 'Random DATA'
+      },
+      subtitle: {
         text: 'Demo'
-    },
-    tooltip: {
-        shared: true,
-        headerFormat: '<span style="font-size:12px"><b>{point.key}</b></span><br>'
-    },
-    credits: {
-      enabled: false,
-    },
-    exporting: {
-      enabled: true,
-    },
-    
-    series: [{
-      data: this.data,
-      type: 'area'
-   }]
-  }
+      },
+      tooltip: {
+        split: true,
+        valueSuffix: ' millions'
+      },
+      credits: {
+        enabled: false
+      },
+      exporting: {
+        enabled: true,
+      },
+      series: this.data
+    };
 
     HC_exporting(Highcharts);
-    
-  setTimeout(() => {
-    window.dispatchEvent(
-      new Event('resize')
-      );
-  }, 300);
 
-}
+    setTimeout(() => {
+      window.dispatchEvent(
+        new Event('resize')
+      );
+    }, 300);
+  }
+
 }

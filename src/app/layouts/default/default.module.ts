@@ -6,16 +6,12 @@ import { RouterModule } from '@angular/router';
 import { PostsComponent } from 'src/app/modules/posts/posts.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatCardModule} from '@angular/material/card';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardService } from 'src/app/modules/dashboard.service';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatTableModule } from '@angular/material/table';
-
-
-
-
 
 @NgModule({
   declarations: [
@@ -33,7 +29,6 @@ import { MatTableModule } from '@angular/material/table';
     MatCardModule,
     MatPaginatorModule,
     MatTableModule
-  
   ],
   providers: [
     DashboardService
