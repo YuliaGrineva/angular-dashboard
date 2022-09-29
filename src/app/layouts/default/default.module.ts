@@ -13,6 +13,8 @@ import { DashboardService } from 'src/app/modules/dashboard.service';
 
 
 
+
+
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -26,7 +28,8 @@ import { DashboardService } from 'src/app/modules/dashboard.service';
     MatSidenavModule,
     FlexLayoutModule,
     MatDividerModule,
-    MatCardModule
+    MatCardModule,
+  
   ],
   providers: [
     DashboardService

@@ -14,7 +14,7 @@ export class AreaComponent implements OnInit {
   Highcharts: typeof Highcharts = Highcharts;
   chartOptions: Highcharts.Options = {};
 
-  @Input() data = [];
+  @Input() data: { name: string; data: number[]; }[] = [];
   
 
   constructor() { }

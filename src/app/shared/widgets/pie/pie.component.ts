@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
 HC_exporting(Highcharts);
@@ -12,6 +12,10 @@ export class PieComponent implements OnInit {
 
   Highcharts: typeof Highcharts = Highcharts;
   chartOptions: Highcharts.Options = {};
+
+  @Input() 
+  data: any[] = [];
+
 
   constructor() { }
 
@@ -55,37 +59,8 @@ export class PieComponent implements OnInit {
           name: 'Brands',
           colorByPoint: true,
           type: 'pie',
-          data: [{
-              name: 'Chrome',
-              y: 70.67,
-              sliced: true,
-              selected: true
-          }, {
-              name: 'Edge',
-              y: 14.77
-          },  {
-              name: 'Firefox',
-              y: 4.86
-          }, {
-              name: 'Safari',
-              y: 2.63
-          }, {
-              name: 'Internet Explorer',
-              y: 1.53
-          },  {
-              name: 'Opera',
-              y: 1.40
-          }, {
-              name: 'Sogou Explorer',
-              y: 0.84
-          }, {
-              name: 'QQ',
-              y: 0.51
-          }, {
-              name: 'Other',
-              y: 2.6
-          }]
-      }]
+          data: this.data
+        }]
   };
 
     
