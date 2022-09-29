@@ -10,6 +10,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatCardModule} from '@angular/material/card';
 import { DashboardService } from 'src/app/modules/dashboard.service';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 
 
@@ -26,9 +28,11 @@ import { DashboardService } from 'src/app/modules/dashboard.service';
     RouterModule,
     SharedModule,
     MatSidenavModule,
-    FlexLayoutModule,
     MatDividerModule,
+    FlexLayoutModule,
     MatCardModule,
+    MatPaginatorModule,
+    MatTableModule
   
   ],
   providers: [
